@@ -26,7 +26,7 @@ pipeline {
     }
     stage ('Deploy') {
             steps{
-              deploy adapters: [tomcat9(credentialsId: '3c921852-8b67-4f6f-bf6d-b6c033b64661', path: '', url: 'http://localhost:8090/')], contextPath: '\' \'', war: '**/*.war'
+              deploy adapters: [tomcat9(credentialsId: '93fc75be-3137-47e0-9113-2b7953f1b6db', path: '', url: 'http://localhost:8090/')], contextPath: 'jenkinsdeploy', war: '**/*.war'
               echo "Deploy successful";
             }
         }
