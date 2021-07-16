@@ -24,5 +24,11 @@ pipeline {
         bat 'mvn -Dmaven.test.failure.ignore=true clean package' 
       }
     }
-  }
+    stage ('Deploy') {
+            steps{
+              deploy adapters: [tomcat9(credentialsId: '3c921852-8b67-4f6f-bf6d-b6c033b64661', path: '', url: 'http://localhost:8090/')], contextPath: '\' \'', war: '**/*.war'
+              echo "Deploy successful";
+            }
+        }
+    }
 }
