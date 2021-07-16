@@ -4,7 +4,7 @@ pipeline {
           def mvnHome= tool "Maven"
          stage ('Build') {
             steps {
-                bat '${mvnHome}/bin/mvn/ clean install -f pom.xml'
+                sh '${mvnHome}/bin/mvn/ clean install -f pom.xml'
               //bat 'mvn -Dmaven.test.failure.ignore=true clean package' 
             }
         }
